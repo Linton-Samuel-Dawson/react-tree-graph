@@ -2,13 +2,9 @@ language: node_js
 node_js:
   - "8"
   - "10"
+script:
+  - npm run eslint
+  - npm test -- --coverage
+  - npm run build
 
-  cache:
-  directories:
-    - "node_modules"
-
-jobs:
-  include:
-    - stage: Produce Coverage
-      node_js: node
-script: jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+after_success: npm run coverage
