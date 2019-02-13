@@ -292,7 +292,8 @@
 							React.createElement(
 								'circle',
 								_extends({}, this.props.circleProps, {
-									r: this.props.radius
+									r: this.props.radius,
+									className: this.props.color ? this.props.color : 'circle'
 								})
 							),
 							React.createElement(

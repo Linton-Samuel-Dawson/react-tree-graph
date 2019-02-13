@@ -31,8 +31,8 @@ export default class Node extends React.PureComponent{
 	render() {
 		return (
 			<g {...this.props.gProps} transform={this.getTransform()} onContextMenu={this.handleRightClick} onClick={this.handleClick}>
-				<circle {...this.props.circleProps} r={this.props.radius}/>
-				<text {...this.props.textProps} dx={this.props.radius + 0.5} dy={this.props.offset}>
+				<circle {...this.props.circleProps} r={this.props.radius}	style={{fill:this.props.color ? this.props.color : '#35B995'}}/>
+				<text {...this.props.textProps} dx={this.props.radius - 13.5} dy={this.props.offset- 13}>
 					{this.props[this.props.labelProp]}
 				</text>
 			</g>);
