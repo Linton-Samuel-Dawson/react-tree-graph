@@ -3,6 +3,9 @@
 		? (module.exports = factory(
 				require('prop-types'),
 				require('react'),
+				require('@material-ui/icons/CheckBoxOutlineBlank'),
+				require('@material-ui/icons/Check'),
+				require('@material-ui/icons/Timelapse'),
 				require('core-js/fn/array/find'),
 				require('core-js/fn/object/assign'),
 				require('clone'),
@@ -13,6 +16,9 @@
 			? define([
 					'prop-types',
 					'react',
+					'@material-ui/icons/CheckBoxOutlineBlank',
+					'@material-ui/icons/Check',
+					'@material-ui/icons/Timelapse',
 					'core-js/fn/array/find',
 					'core-js/fn/object/assign',
 					'clone',
@@ -22,13 +28,27 @@
 			: (global.ReactTreeGraph = factory(
 					global.PropTypes,
 					global.React,
+					global.Todo,
+					global.Check,
+					global.Timelapse,
 					null,
 					null,
 					global.clone,
 					global.d3,
 					global.d3
 			  ));
-})(this, function(PropTypes, React, find, assign, clone, d3Ease, d3Hierarchy) {
+})(this, function(
+	PropTypes,
+	React,
+	Todo,
+	Check,
+	Timelapse,
+	find,
+	assign,
+	clone,
+	d3Ease,
+	d3Hierarchy
+) {
 	'use strict';
 
 	function _classCallCheck(instance, Constructor) {
@@ -304,7 +324,12 @@
 									dx: this.props.radius - 13.5,
 									dy: this.props.offset - 13
 								}),
-								this.props[this.props.labelProp]
+								this.props[this.props.labelProp],
+								this.props.status && this.props.status == 'TODO'
+									? React.createElement(Todo, null)
+									: this.props.status == 'DOING'
+										? React.createElement(Timelapse, null)
+										: React.createElement(Check, null)
 							)
 						);
 					}
