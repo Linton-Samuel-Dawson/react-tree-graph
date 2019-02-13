@@ -293,14 +293,16 @@
 								'circle',
 								_extends({}, this.props.circleProps, {
 									r: this.props.radius,
-									className: this.props.color ? this.props.color : 'circle'
+									style: {
+										fill: this.props.color ? this.props.color : '#35B995'
+									}
 								})
 							),
 							React.createElement(
 								'text',
 								_extends({}, this.props.textProps, {
-									dx: this.props.radius + 0.5,
-									dy: this.props.offset
+									dx: this.props.radius - 13.5,
+									dy: this.props.offset - 13
 								}),
 								this.props[this.props.labelProp]
 							)
