@@ -28,7 +28,7 @@
 			: (global.ReactTreeGraph = factory(
 					global.PropTypes,
 					global.React,
-					global.CheckBoxOutlineBlank,
+					global.Todo,
 					global.Check,
 					global.Timelapse,
 					null,
@@ -40,7 +40,7 @@
 })(this, function(
 	PropTypes,
 	React,
-	CheckBoxOutlineBlank,
+	Todo,
 	Check,
 	Timelapse,
 	find,
@@ -324,7 +324,17 @@
 									dx: this.props.radius - 13.5,
 									dy: this.props.offset - 13
 								}),
-								this.props[this.props.labelProp]
+								React.createElement(
+									React.Fragment,
+									null,
+									this.props[this.props.labelProp],
+									this.props.status &&
+										(this.props.status === 'TODO'
+											? React.createElement(Todo, null)
+											: this.props.status === 'DOING'
+												? React.createElement(Timelapse, null)
+												: React.createElement(Check, null))
+								)
 							)
 						);
 					}

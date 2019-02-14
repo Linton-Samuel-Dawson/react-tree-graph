@@ -40,8 +40,15 @@ export default class Node extends React.PureComponent {
 			<g {...this.props.gProps} transform={this.getTransform()} onContextMenu={this.handleRightClick} onClick={this.handleClick}>
 				<circle {...this.props.circleProps} r={this.props.radius} style={{fill: this.props.color ? this.props.color : '#35B995'}}/>
 				<text {...this.props.textProps} dx={this.props.radius - 13.5} dy={this.props.offset - 13}>
-					{this.props[this.props.labelProp]}
-					
+					<React.Fragment>
+						{this.props[this.props.labelProp]}
+						{
+							this.props.status &&
+						(this.props.status === 'TODO' ? <Todo/> :
+							(this.props.status === 'DOING' ? <Timelapse/> : <Check/>)
+						)
+						}
+					</React.Fragment>
 				</text>
 			</g>);
 	}
