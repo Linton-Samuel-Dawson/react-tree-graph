@@ -43,7 +43,7 @@ export default class Node extends React.PureComponent {
 				<text {...this.props.textProps} dx={this.props.radius - 13.5} dy={this.props.offset - 13}>
 					<React.Fragment>
 						{this.props[this.props.labelProp]}
-						<FontAwesomeIcon icon="igloo" />
+						<i className="fas fa-igloo"></i>
 					</React.Fragment>
 				</text>
 			</g>);
