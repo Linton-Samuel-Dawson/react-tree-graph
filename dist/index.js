@@ -316,8 +316,9 @@
 									dx: this.props.radius - 13.5,
 									dy: this.props.offset - 13
 								}),
-								React.createElement(CheckIcon, null)
-							)
+								'sdfsdf'
+							),
+							React.createElement(CheckIcon, null)
 						);
 					}
 				}

@@ -15,6 +15,7 @@ const defaultConfig = {
 		'd3-hierarchy',
 		'd3-ease',
 		'prop-types',
+		'@material-ui/icons/Check',
 		'react'
 	],
 	input: 'index.js',
