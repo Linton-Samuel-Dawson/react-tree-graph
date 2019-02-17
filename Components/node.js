@@ -3,7 +3,7 @@ import React from 'react';
 // import Todo from '@material-ui/icons/CheckBoxOutlineBlank';
 // import Check from '@material-ui/icons/Check';
 // import Timelapse from '@material-ui/icons/Timelapse';
-import Icon from '@material-ui/core/Icon';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const propTypes = {
 	x: PropTypes.number.isRequired,
@@ -43,11 +43,7 @@ export default class Node extends React.PureComponent {
 				<text {...this.props.textProps} dx={this.props.radius - 13.5} dy={this.props.offset - 13}>
 					<React.Fragment>
 						{this.props[this.props.labelProp]}
-						{
-							this.props.status &&
-							(this.props.status === 'TODO' ? <Icon>star</Icon>: (this.props.status === 'DOING' ? <Icon>star</Icon> : <Icon>star</Icon>)
-							)
-						}
+						<FontAwesomeIcon icon="igloo" />
 					</React.Fragment>
 				</text>
 			</g>);

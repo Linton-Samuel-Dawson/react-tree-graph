@@ -3,7 +3,7 @@
 		? (module.exports = factory(
 				require('prop-types'),
 				require('react'),
-				require('@material-ui/core/Icon'),
+				require('@fortawesome/react-fontawesome'),
 				require('core-js/fn/array/find'),
 				require('core-js/fn/object/assign'),
 				require('clone'),
@@ -14,7 +14,7 @@
 			? define([
 					'prop-types',
 					'react',
-					'@material-ui/core/Icon',
+					'@fortawesome/react-fontawesome',
 					'core-js/fn/array/find',
 					'core-js/fn/object/assign',
 					'clone',
@@ -24,7 +24,7 @@
 			: (global.ReactTreeGraph = factory(
 					global.PropTypes,
 					global.React,
-					global.Icon,
+					global.reactFontawesome,
 					null,
 					null,
 					global.clone,
@@ -34,7 +34,7 @@
 })(this, function(
 	PropTypes,
 	React,
-	Icon,
+	reactFontawesome,
 	find,
 	assign,
 	clone,
@@ -320,12 +320,9 @@
 									React.Fragment,
 									null,
 									this.props[this.props.labelProp],
-									this.props.status &&
-										(this.props.status === 'TODO'
-											? React.createElement(Icon, null, 'star')
-											: this.props.status === 'DOING'
-												? React.createElement(Icon, null, 'star')
-												: React.createElement(Icon, null, 'star'))
+									React.createElement(reactFontawesome.FontAwesomeIcon, {
+										icon: 'igloo'
+									})
 								)
 							)
 						);
