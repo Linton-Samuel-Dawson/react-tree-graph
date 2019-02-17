@@ -3,7 +3,7 @@
 		? (module.exports = factory(
 				require('prop-types'),
 				require('react'),
-				require('@fortawesome/react-fontawesome'),
+				require('@material-ui/icons/Check'),
 				require('core-js/fn/array/find'),
 				require('core-js/fn/object/assign'),
 				require('clone'),
@@ -14,7 +14,7 @@
 			? define([
 					'prop-types',
 					'react',
-					'@fortawesome/react-fontawesome',
+					'@material-ui/icons/Check',
 					'core-js/fn/array/find',
 					'core-js/fn/object/assign',
 					'clone',
@@ -24,7 +24,7 @@
 			: (global.ReactTreeGraph = factory(
 					global.PropTypes,
 					global.React,
-					global.reactFontawesome,
+					global.CheckIcon,
 					null,
 					null,
 					global.clone,
@@ -34,7 +34,7 @@
 })(this, function(
 	PropTypes,
 	React,
-	reactFontawesome,
+	CheckIcon,
 	find,
 	assign,
 	clone,
@@ -316,14 +316,7 @@
 									dx: this.props.radius - 13.5,
 									dy: this.props.offset - 13
 								}),
-								React.createElement(
-									React.Fragment,
-									null,
-									this.props[this.props.labelProp],
-									React.createElement('i', {
-										className: 'fa fa-igloo'
-									})
-								)
+								React.createElement(CheckIcon, null)
 							)
 						);
 					}

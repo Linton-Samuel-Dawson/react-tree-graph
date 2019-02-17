@@ -1,9 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-// import Todo from '@material-ui/icons/CheckBoxOutlineBlank';
-// import Check from '@material-ui/icons/Check';
-// import Timelapse from '@material-ui/icons/Timelapse';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import CheckIcon from '@material-ui/icons/Check';
 
 const propTypes = {
 	x: PropTypes.number.isRequired,
@@ -41,10 +38,7 @@ export default class Node extends React.PureComponent {
 			<g {...this.props.gProps} transform={this.getTransform()} onContextMenu={this.handleRightClick} onClick={this.handleClick}>
 				<circle {...this.props.circleProps} r={this.props.radius} style={{fill: this.props.color ? this.props.color : '#35B995'}}/>
 				<text {...this.props.textProps} dx={this.props.radius - 13.5} dy={this.props.offset - 13}>
-					<React.Fragment>
-						{this.props[this.props.labelProp]}
-						<i className="fa fa-igloo"></i>
-					</React.Fragment>
+						<CheckIcon/>
 				</text>
 			</g>);
 	}
