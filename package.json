@@ -46,6 +46,7 @@
     "rollup-plugin-uglify": "^6.0.0"
   },
   "dependencies": {
+    "@material-ui/core": "^3.9.2",
     "@material-ui/icons": "^3.0.2",
     "clone": "^2.1.1",
     "core-js": "^2.5.0",

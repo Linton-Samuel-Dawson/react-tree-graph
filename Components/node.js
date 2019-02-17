@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import Todo from '@material-ui/icons/CheckBoxOutlineBlank';
-import Check from '@material-ui/icons/Check';
-import Timelapse from '@material-ui/icons/Timelapse';
+// import Todo from '@material-ui/icons/CheckBoxOutlineBlank';
+// import Check from '@material-ui/icons/Check';
+// import Timelapse from '@material-ui/icons/Timelapse';
+import Icon from '@material-ui/core/Icon';
 
 const propTypes = {
 	x: PropTypes.number.isRequired,
@@ -44,9 +45,8 @@ export default class Node extends React.PureComponent {
 						{this.props[this.props.labelProp]}
 						{
 							this.props.status &&
-						(this.props.status === 'TODO' ? <Todo/> :
-							(this.props.status === 'DOING' ? <Timelapse/> : <Check/>)
-						)
+							(this.props.status === 'TODO' ? <Icon>star</Icon>: (this.props.status === 'DOING' ? <Icon>star</Icon> : <Icon>star</Icon>)
+							)
 						}
 					</React.Fragment>
 				</text>

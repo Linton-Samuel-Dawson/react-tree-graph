@@ -3,9 +3,7 @@
 		? (module.exports = factory(
 				require('prop-types'),
 				require('react'),
-				require('@material-ui/icons/CheckBoxOutlineBlank'),
-				require('@material-ui/icons/Check'),
-				require('@material-ui/icons/Timelapse'),
+				require('@material-ui/core/Icon'),
 				require('core-js/fn/array/find'),
 				require('core-js/fn/object/assign'),
 				require('clone'),
@@ -16,9 +14,7 @@
 			? define([
 					'prop-types',
 					'react',
-					'@material-ui/icons/CheckBoxOutlineBlank',
-					'@material-ui/icons/Check',
-					'@material-ui/icons/Timelapse',
+					'@material-ui/core/Icon',
 					'core-js/fn/array/find',
 					'core-js/fn/object/assign',
 					'clone',
@@ -28,9 +24,7 @@
 			: (global.ReactTreeGraph = factory(
 					global.PropTypes,
 					global.React,
-					global.Todo,
-					global.Check,
-					global.Timelapse,
+					global.Icon,
 					null,
 					null,
 					global.clone,
@@ -40,9 +34,7 @@
 })(this, function(
 	PropTypes,
 	React,
-	Todo,
-	Check,
-	Timelapse,
+	Icon,
 	find,
 	assign,
 	clone,
@@ -330,10 +322,10 @@
 									this.props[this.props.labelProp],
 									this.props.status &&
 										(this.props.status === 'TODO'
-											? React.createElement(Todo, null)
+											? React.createElement(Icon, null, 'star')
 											: this.props.status === 'DOING'
-												? React.createElement(Timelapse, null)
-												: React.createElement(Check, null))
+												? React.createElement(Icon, null, 'star')
+												: React.createElement(Icon, null, 'star'))
 								)
 							)
 						);
