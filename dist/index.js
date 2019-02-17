@@ -320,8 +320,8 @@
 									React.Fragment,
 									null,
 									this.props[this.props.labelProp],
-									React.createElement(reactFontawesome.FontAwesomeIcon, {
-										icon: 'igloo'
+									React.createElement('i', {
+										className: 'fa fa-igloo'
 									})
 								)
 							)
