@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import CheckIcon from '@material-ui/icons/Check';
 
 const propTypes = {
 	x: PropTypes.number.isRequired,
@@ -38,9 +37,14 @@ export default class Node extends React.PureComponent {
 			<g {...this.props.gProps} transform={this.getTransform()} onContextMenu={this.handleRightClick} onClick={this.handleClick}>
 				<circle {...this.props.circleProps} r={this.props.radius} style={{fill: this.props.color ? this.props.color : '#35B995'}}/>
 				<text {...this.props.textProps} dx={this.props.radius - 13.5} dy={this.props.offset - 13}>
-						sdfsdf
+					{this.props[this.props.labelProp]}
+					{
+
+						this.props.status &&
+						(this.props.status == 'TO_DO' ? String.fromCharCode(0x2610) :
+							(this.props.status == 'DOING' ? String.fromCharCode(0x2692)  : String.fromCharCode(0x2714)))
+					}
 				</text>
-				<CheckIcon/>
 			</g>);
 	}
 }

@@ -3,7 +3,6 @@
 		? (module.exports = factory(
 				require('prop-types'),
 				require('react'),
-				require('@material-ui/icons/Check'),
 				require('core-js/fn/array/find'),
 				require('core-js/fn/object/assign'),
 				require('clone'),
@@ -14,7 +13,6 @@
 			? define([
 					'prop-types',
 					'react',
-					'@material-ui/icons/Check',
 					'core-js/fn/array/find',
 					'core-js/fn/object/assign',
 					'clone',
@@ -24,23 +22,13 @@
 			: (global.ReactTreeGraph = factory(
 					global.PropTypes,
 					global.React,
-					global.CheckIcon,
 					null,
 					null,
 					global.clone,
 					global.d3,
 					global.d3
 			  ));
-})(this, function(
-	PropTypes,
-	React,
-	CheckIcon,
-	find,
-	assign,
-	clone,
-	d3Ease,
-	d3Hierarchy
-) {
+})(this, function(PropTypes, React, find, assign, clone, d3Ease, d3Hierarchy) {
 	'use strict';
 
 	function _classCallCheck(instance, Constructor) {
@@ -316,9 +304,15 @@
 									dx: this.props.radius - 13.5,
 									dy: this.props.offset - 13
 								}),
-								'sdfsdf'
-							),
-							React.createElement(CheckIcon, null)
+								this.props[this.props.labelProp],
+								this.props.status &&
+									(this.props.status == 'TO_DO'
+										? String.fromCharCode(0x2610)
+										: this.props.status == 'DOING'
+											? String.fromCharCode(0x2692)
+											: String.fromCharCode(0x2714)),
+								this.props.status
+							)
 						);
 					}
 				}
