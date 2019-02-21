@@ -34,15 +34,16 @@ export default class Node extends React.PureComponent {
 
 	render() {
 		return (
-			<g {...this.props.gProps} transform={this.getTransform()} onContextMenu={this.handleRightClick} onClick={this.handleClick}>
-				<circle {...this.props.circleProps} r={this.props.radius} style={{fill: this.props.color ? this.props.color : '#35B995'}}/>
-				<text {...this.props.textProps} dx={this.props.radius - 13.5} dy={this.props.offset - 13}>
-					{this.props[this.props.labelProp]}
+			<g {...this.props.gProps}  transform={this.getTransform()} onContextMenu={this.handleRightClick} onClick={this.handleClick}>
+				<circle {...this.props.circleProps} r={this.props.radius} style={{fill: this.props.color ? this.props.color : '#ff9600'}}/>
+				<text {...this.props.textProps} dx={this.props.radius - 13.5} dy={this.props.offset - 13} >
+					{`${this.props[this.props.labelProp]}`}
+				</text>
+				<text {...this.props.textProps} dx={this.props.radius + 7} dy={this.props.offset - 17.5} >
 					{
-
 						this.props.status &&
 						(this.props.status == 'TO_DO' ? String.fromCharCode(0x2610) :
-							(this.props.status == 'DOING' ? String.fromCharCode(0x2692)  : String.fromCharCode(0x2714)))
+							(this.props.status == 'DOING' ? String.fromCharCode(0x23F2)  : String.fromCharCode(0x2611)))
 					}
 				</text>
 			</g>);

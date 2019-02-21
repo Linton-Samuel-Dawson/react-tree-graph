@@ -294,7 +294,7 @@
 								_extends({}, this.props.circleProps, {
 									r: this.props.radius,
 									style: {
-										fill: this.props.color ? this.props.color : '#35B995'
+										fill: this.props.color ? this.props.color : '#ff9600'
 									}
 								})
 							),
@@ -304,14 +304,20 @@
 									dx: this.props.radius - 13.5,
 									dy: this.props.offset - 13
 								}),
-								this.props[this.props.labelProp],
+								''.concat(this.props[this.props.labelProp])
+							),
+							React.createElement(
+								'text',
+								_extends({}, this.props.textProps, {
+									dx: this.props.radius + 7,
+									dy: this.props.offset - 17.5
+								}),
 								this.props.status &&
 									(this.props.status == 'TO_DO'
 										? String.fromCharCode(0x2610)
 										: this.props.status == 'DOING'
-											? String.fromCharCode(0x2692)
-											: String.fromCharCode(0x2714)),
-								this.props.status
+											? String.fromCharCode(0x23f2)
+											: String.fromCharCode(0x2611))
 							)
 						);
 					}
