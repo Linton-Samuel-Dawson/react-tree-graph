@@ -36,10 +36,10 @@ export default class Node extends React.PureComponent {
 		return (
 			<g {...this.props.gProps}  transform={this.getTransform()} onContextMenu={this.handleRightClick} onClick={this.handleClick}>
 				<circle {...this.props.circleProps} r={this.props.radius} style={{fill: this.props.color ? this.props.color : '#ff9600'}}/>
-				<text {...this.props.textProps} dx={this.props.radius - 13.5} dy={this.props.offset - 13} >
+				<text {...this.props.textProps} dx={this.props.radius - 15} dy={this.props.offset - 17} >
 					{`${this.props[this.props.labelProp]}`}
 				</text>
-				<text {...this.props.textProps} dx={this.props.radius + 7} dy={this.props.offset - 17.5} >
+				<text {...this.props.textProps} dx={this.props.radius + 10} dy={this.props.offset - 16} >
 					{
 						this.props.status &&
 						(this.props.status == 'TO_DO' ? String.fromCharCode(0x2610) :

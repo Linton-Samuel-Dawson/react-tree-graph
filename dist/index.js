@@ -301,16 +301,16 @@
 							React.createElement(
 								'text',
 								_extends({}, this.props.textProps, {
-									dx: this.props.radius - 13.5,
-									dy: this.props.offset - 13
+									dx: this.props.radius - 15,
+									dy: this.props.offset - 17
 								}),
 								''.concat(this.props[this.props.labelProp])
 							),
 							React.createElement(
 								'text',
 								_extends({}, this.props.textProps, {
-									dx: this.props.radius + 7,
-									dy: this.props.offset - 17.5
+									dx: this.props.radius + 10,
+									dy: this.props.offset - 16
 								}),
 								this.props.status &&
 									(this.props.status == 'TO_DO'
