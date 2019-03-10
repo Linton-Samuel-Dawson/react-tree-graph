@@ -302,15 +302,7 @@
 								'text',
 								_extends({}, this.props.textProps, {
 									dx: this.props.radius - 15,
-									dy: this.props.offset - 17
-								}),
-								''.concat(this.props[this.props.labelProp])
-							),
-							React.createElement(
-								'text',
-								_extends({}, this.props.textProps, {
-									dx: this.props.radius + 10,
-									dy: this.props.offset - 16
+									dy: this.props.offset - 15
 								}),
 								this.props.status &&
 									(this.props.status == 'TO_DO'
@@ -318,6 +310,14 @@
 										: this.props.status == 'DOING'
 											? String.fromCharCode(0x23f2)
 											: String.fromCharCode(0x2611))
+							),
+							React.createElement(
+								'text',
+								_extends({}, this.props.textProps, {
+									dx: this.props.radius + 5,
+									dy: this.props.offset - 16
+								}),
+								''.concat(this.props[this.props.labelProp])
 							)
 						);
 					}
