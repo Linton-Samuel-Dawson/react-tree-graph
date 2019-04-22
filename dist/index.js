@@ -3,6 +3,7 @@
 		? (module.exports = factory(
 				require('prop-types'),
 				require('react'),
+				require('moment-jalaali'),
 				require('core-js/fn/array/find'),
 				require('core-js/fn/object/assign'),
 				require('clone'),
@@ -13,6 +14,7 @@
 			? define([
 					'prop-types',
 					'react',
+					'moment-jalaali',
 					'core-js/fn/array/find',
 					'core-js/fn/object/assign',
 					'clone',
@@ -22,13 +24,23 @@
 			: (global.ReactTreeGraph = factory(
 					global.PropTypes,
 					global.React,
+					global.moment,
 					null,
 					null,
 					global.clone,
 					global.d3,
 					global.d3
 			  ));
-})(this, function(PropTypes, React, find, assign, clone, d3Ease, d3Hierarchy) {
+})(this, function(
+	PropTypes,
+	React,
+	moment,
+	find,
+	assign,
+	clone,
+	d3Ease,
+	d3Hierarchy
+) {
 	'use strict';
 
 	function _classCallCheck(instance, Constructor) {
@@ -310,6 +322,40 @@
 										: this.props.status == 'DOING'
 											? String.fromCharCode(0x23f2)
 											: String.fromCharCode(0x2611))
+							),
+							React.createElement(
+								'text',
+								_extends(
+									{
+										className: 'detailText'
+									},
+									this.props.textProps,
+									{
+										dx: this.props.radius - 75,
+										dy: this.props.offset - 15
+									}
+								),
+								this.props.created_at &&
+									moment(this.props.created_at).format('jMM/jDD')
+							),
+							React.createElement(
+								'text',
+								_extends(
+									{
+										className: 'detailText'
+									},
+									this.props.textProps,
+									{
+										dx: this.props.radius - 235,
+										dy: this.props.offset - 15
+									}
+								),
+								this.props.executives &&
+									(this.props.executives.length > 1
+										? this.props.executives[0]['name'] +
+										  ' , ' +
+										  this.props.executives[1]['name']
+										: this.props.executives[0]['name'])
 							),
 							React.createElement(
 								'text',
