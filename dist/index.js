@@ -331,7 +331,7 @@
 									},
 									this.props.textProps,
 									{
-										dx: this.props.radius - 75,
+										dx: this.props.radius - 25,
 										dy: this.props.offset - 15
 									}
 								),
@@ -346,16 +346,17 @@
 									},
 									this.props.textProps,
 									{
-										dx: this.props.radius - 235,
+										dx: this.props.radius - 65,
 										dy: this.props.offset - 15
 									}
 								),
 								this.props.executives &&
 									(this.props.executives.length > 1
-										? this.props.executives[0]['name'] +
+										? ' | ' +
+										  this.props.executives[0]['name'] +
 										  ' , ' +
 										  this.props.executives[1]['name']
-										: this.props.executives[0]['name'])
+										: ' | ' + this.props.executives[0]['name'])
 							),
 							React.createElement(
 								'text',
