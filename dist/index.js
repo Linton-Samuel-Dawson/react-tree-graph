@@ -313,58 +313,25 @@
 							React.createElement(
 								'text',
 								_extends({}, this.props.textProps, {
-									dx: this.props.radius - 15,
-									dy: this.props.offset - 15
+									dx: this.props.radius + 55,
+									dy: this.props.offset - 16
 								}),
 								this.props.status &&
 									(this.props.status == 'TO_DO'
 										? String.fromCharCode(0x2610)
 										: this.props.status == 'DOING'
 											? String.fromCharCode(0x23f2)
-											: String.fromCharCode(0x2611))
-							),
-							React.createElement(
-								'text',
-								_extends(
-									{
-										className: 'detailText'
-									},
-									this.props.textProps,
-									{
-										dx: this.props.radius - 25,
-										dy: this.props.offset - 15
-									}
-								),
+											: String.fromCharCode(0x2611)),
+								''.concat(this.props[this.props.labelProp]),
 								this.props.created_at &&
-									moment(this.props.created_at).format('jMM/jDD')
-							),
-							React.createElement(
-								'text',
-								_extends(
-									{
-										className: 'detailText'
-									},
-									this.props.textProps,
-									{
-										dx: this.props.radius - 65,
-										dy: this.props.offset - 15
-									}
-								),
+									' | '.concat(moment(this.props.created_at).format('jMM/jDD')),
 								this.props.executives &&
+									this.props.executives.length > 0 &&
 									(this.props.executives.length > 1
-										? ' | ' +
-										  this.props.executives[0]['name'] +
+										? this.props.executives[0]['name'] +
 										  ' , ' +
 										  this.props.executives[1]['name']
-										: ' | ' + this.props.executives[0]['name'])
-							),
-							React.createElement(
-								'text',
-								_extends({}, this.props.textProps, {
-									dx: this.props.radius + 5,
-									dy: this.props.offset - 16
-								}),
-								''.concat(this.props[this.props.labelProp])
+										: this.props.executives[0]['name'])
 							)
 						);
 					}
