@@ -322,16 +322,16 @@
 										: this.props.status == 'DOING'
 											? String.fromCharCode(0x23f2)
 											: String.fromCharCode(0x2611)),
-								''.concat(this.props[this.props.labelProp]),
-								this.props.created_at &&
-									' | '.concat(moment(this.props.created_at).format('jMM/jDD')),
+								'  '.concat(this.props[this.props.labelProp]),
+								this.props.end &&
+									' | '.concat(moment(this.props.end).format('jMM/jDD')),
 								this.props.executives &&
 									this.props.executives.length > 0 &&
 									(this.props.executives.length > 1
-										? this.props.executives[0]['name'] +
-										  ' , ' +
-										  this.props.executives[1]['name']
-										: this.props.executives[0]['name'])
+										? ' | '
+												.concat(this.props.executives[0]['name'], ' , ')
+												.concat(this.props.executives[1]['name'])
+										: ' | '.concat(this.props.executives[0]['name'], ' '))
 							)
 						);
 					}

@@ -49,20 +49,21 @@ export default class Node extends React.PureComponent {
 							(this.props.status == 'DOING' ? String.fromCharCode(0x23F2) : String.fromCharCode(0x2611)))
 
 					}
-					{`${this.props[this.props.labelProp]}`}
+					{`  ${this.props[this.props.labelProp]}`}
 
 					{
-						this.props.created_at &&
-						` | ${moment(this.props.created_at).format('jMM/jDD')}`
+						this.props.end &&
+						` | ${moment(this.props.end).format('jMM/jDD')}`
 					}
 					{
 						this.props.executives && this.props.executives.length > 0 &&
 						(this.props.executives.length > 1
-							? this.props.executives[0]['name']
-							+ ' , ' +
-							this.props.executives[1]['name']
-							:
-							this.props.executives[0]['name'])
+								? ` | ${this.props.executives[0]['name']} , ${
+									this.props.executives[1]['name']
+									}`
+								:
+								` | ${this.props.executives[0]['name']} `
+						)
 					}
 				</text>
 			</g>);
