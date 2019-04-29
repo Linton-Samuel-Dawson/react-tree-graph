@@ -46,7 +46,12 @@ export default class Node extends React.PureComponent {
 					{
 						this.props.status &&
 						(this.props.status == 'TO_DO' ? String.fromCharCode(0x2610) :
-							(this.props.status == 'DOING' ? String.fromCharCode(0x23F2) : String.fromCharCode(0x2611)))
+								(this.props.status == 'DOING' ? String.fromCharCode(0x23F2) :
+										(this.props.status == 'DONE' ? String.fromCharCode(0x2611) :
+												'A'
+										)
+								)
+						)
 
 					}
 					{`  ${this.props[this.props.labelProp]}`}

@@ -321,7 +321,9 @@
 										? String.fromCharCode(0x2610)
 										: this.props.status == 'DOING'
 											? String.fromCharCode(0x23f2)
-											: String.fromCharCode(0x2611)),
+											: this.props.status == 'DONE'
+												? String.fromCharCode(0x2611)
+												: 'A'),
 								'  '.concat(this.props[this.props.labelProp]),
 								this.props.end &&
 									' | '.concat(moment(this.props.end).format('jMM/jDD')),
