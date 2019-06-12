@@ -306,7 +306,7 @@
 								_extends({}, this.props.circleProps, {
 									r: this.props.radius,
 									style: {
-										fill: this.props.color ? this.props.color : '#ff9600'
+										fill: this.props.color ? this.props.color : '#00695c'
 									}
 								})
 							),

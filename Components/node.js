@@ -39,7 +39,7 @@ export default class Node extends React.PureComponent {
 			<g {...this.props.gProps} transform={this.getTransform()} onContextMenu={this.handleRightClick}
 			   onClick={this.handleClick}>
 				<circle {...this.props.circleProps} r={this.props.radius}
-						style={{fill: this.props.color ? this.props.color : '#ff9600'}}/>
+						style={{fill: this.props.color ? this.props.color : '#00695c'}}/>
 				<text {...this.props.textProps}
 					  dx={this.props.radius + 55}
 					  dy={this.props.offset - 16}>
